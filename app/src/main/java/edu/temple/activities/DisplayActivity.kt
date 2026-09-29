@@ -12,10 +12,11 @@ class DisplayActivity : AppCompatActivity() {
     // TODO Step 1: Launch TextSizeActivity when button clicked to allow selection of text size value
     val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
-            //  lyricsDisplayTextView.textSize = it.data?.getIntExtra(REPLY_KEY, 24)?.toFloat() ?: 24f
             it.data?.getIntExtra(REPLY_KEY, 22)?.run {
                 lyricsDisplayTextView.textSize = this.toFloat()
             }
+            //lyricsDisplayTextView.textSize = it.data?.getIntExtra(REPLY_KEY, 24)?.toFloat() ?: 24f
+
         }
     }
 
